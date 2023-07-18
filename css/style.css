@@ -1,0 +1,209 @@
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+}
+
+.container-fluid {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Form */
+.container-form {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form form {
+  /* background-color: #000; */
+  width: 60%;
+}
+
+.container-form form label {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.container-form form .input-todolist {
+  margin-top: 0.8rem !important;
+  /* background-color: #000; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container-form form input[type="text"] {
+  height: 43px;
+  padding-left: 0.4rem !important;
+  border-radius: 5px;
+  border: 1px solid #000;
+  width: 89%;
+}
+
+.container-form form button {
+  border: none;
+  width: 10%;
+  color: #fff;
+  border-radius: 5px;
+  background-color: brown !important;
+  padding: 10px !important;
+  margin-right: 0 !important;
+}
+
+.container-form form input::placeholder {
+  padding: 0rem;
+}
+
+/* List To-do */
+
+.list-container {
+  padding-left: 20% !important;
+  padding-right: 20% !important;
+  margin-top: 5rem !important;
+  /* background-color: aquamarine; */
+}
+
+/* If List To-do None and displayed */
+
+.list-container.non-active {
+  display: none;
+}
+
+.list-container.active {
+  display: block;
+}
+
+.list-container .title {
+  margin-bottom: 1rem !important;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.list-container .list-todo ul {
+  display: flex !important;
+  width: fit-content !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* todo-name */
+
+.list-container .list-todo ul .todo-name {
+  display: flex;
+  width: 100% !important;
+}
+
+.list-container .list-todo ul .todo-name:hover {
+  cursor: pointer;
+}
+
+/* Check */
+.list-container .list-todo ul .todo-name::before {
+  content: url(../icon/circle.svg);
+  margin-right: 1rem !important;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.list-container .list-todo ul .todo-name:hover::before {
+  content: url(../icon/circle-hover.svg);
+  width: 24px;
+  height: 24px;
+}
+
+.list-container .list-todo ul .todo-name.checked::before {
+  content: url(../icon/check-circle.svg);
+  z-index: 10;
+}
+
+.list-container .list-todo ul .todo-name.checked:hover::before {
+  content: url(../icon/check-circle-hover.svg);
+}
+
+/* If Checked */
+
+.list-container .list-todo ul .todo-name.checked {
+  text-decoration: line-through !important;
+  color: #808080;
+}
+
+/* Delete */
+
+.list-container .list-todo ul .x {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 20%;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../icon/x.svg);
+}
+
+.list-container .list-todo ul .x:hover {
+  background-image: url(../icon/x-hover.svg);
+}
+
+/* Media Kueri */
+
+@media (max-width: 990px) {
+  .container-form form {
+    /* background-color: #000; */
+    width: 75%;
+  }
+
+  .container-form form label {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 2.8vmax;
+  }
+
+  .container-form form input[type="text"] {
+    height: 43px;
+    padding-left: 0.4rem !important;
+    border-radius: 5px;
+    border: 1px solid #000;
+    width: 100%;
+  }
+
+  .container-form form button {
+    border: none;
+    color: #fff;
+    background-color: brown !important;
+    margin-top: 1rem !important;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px !important;
+  }
+
+  .list-container {
+    padding-left: 13% !important;
+    padding-right: 13% !important;
+    margin-top: 5rem !important;
+    /* background-color: aquamarine; */
+  }
+
+  .list-container .list-todo ul .x {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 12%;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../icon/x.svg);
+  }
+}
