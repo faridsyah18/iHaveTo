@@ -13,28 +13,30 @@
     />
   </head>
   <body>
-    <div class="container-fluid">
-      <!-- Form Start -->
-      <div class="container-form">
-        <form action="">
-          <label for="label-form">What you have to do?</label>
-          <div class="input-todolist">
-            <input type="text" id="input" placeholder="Text here" required />
-            <button onclick="addTask()" type="submit">Add</button>
+    <div class="container">
+      <div class="container-fluid">
+        <!-- Form Start -->
+        <div class="container-form">
+          <form action="">
+            <label for="label-form">What you have to do?</label>
+            <div class="input-todolist">
+              <input type="text" id="input" placeholder="Text here" required />
+              <button onclick="addTask()" type="submit">Add</button>
+            </div>
+          </form>
+        </div>
+        <!-- Form End -->
+        <!-- List To-do Start -->
+        <div class="list-container non-active">
+          <div class="title">
+            <p>Your Tasks</p>
           </div>
-        </form>
-      </div>
-      <!-- Form End -->
-      <!-- List To-do Start -->
-      <div class="list-container non-active">
-        <div class="title">
-          <p>Your Tasks</p>
+          <div class="list-todo">
+            <!-- isi list -->
+          </div>
         </div>
-        <div class="list-todo">
-          <!-- isi list -->
-        </div>
+        <!-- List To-do End -->
       </div>
-      <!-- List To-do End -->
     </div>
     <script
       src="https://code.jquery.com/jquery-3.7.0.js"

@@ -1,9 +1,12 @@
 const inputBox = document.getElementById("input");
 const listTodo = document.getElementsByClassName("list-todo");
 const listContainer = document.querySelectorAll(".list-container");
+const formTodo = document.querySelector(".container-form");
 
 function saveData() {
   localStorage.setItem("data", listTodo[0].innerHTML);
+
+  loadData();
 }
 
 function loadData() {
@@ -15,14 +18,14 @@ function loadData() {
   // Mengambil semua elemen X
   let delTodo = listTodo[0].querySelectorAll(".x");
 
-  // Add event listeners to each todo-name element
+  // Menambahkan Event Listener ke element todo-name
   todoNames.forEach(function (todoName, index) {
     todoName.addEventListener("click", function () {
       this.classList.toggle("checked");
       saveData();
     });
 
-    // Add event listener to corresponding x element
+    // Menambahkan Event Listener ke element logo delete
     let x = delTodo[index];
     x.addEventListener("click", function () {
       this.parentElement.remove();
@@ -35,9 +38,13 @@ function loadData() {
   if (listTodo[0].children.length > 0) {
     // Menghapus class "non-active" dari class list-container
     listContainer[0].classList.remove("non-active");
+    // Menambah margin-top pada .container-form
+    formTodo.classList.add("v2");
   } else {
     // Menambahkan class "non-active" ke class list-container
     listContainer[0].classList.add("non-active");
+    // Menghapus margin-top pada .container-form
+    formTodo.classList.remove("v2");
   }
 }
 
@@ -100,9 +107,14 @@ function addTask() {
 }
 
 function checkListTodoKosong() {
-  // Cek jika ada elemen di dalam list-todo
+  // Cek jika tidak ada elemen di dalam list-todo
   if (listTodo[0].children.length === 0) {
     // Menambahkan class "non-active" ke class list-container
     listContainer[0].classList.add("non-active");
+    // Menghapus margin-top pada .container-form
+    formTodo.classList.remove("v2");
+  } else {
+    // Menambah margin-top pada .container-form
+    formTodo.classList.add("v2");
   }
 }
