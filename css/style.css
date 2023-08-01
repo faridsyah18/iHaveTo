@@ -6,8 +6,12 @@
   /* overflow: hidden; */
 }
 
+body {
+  background-color: #fff;
+}
+
 .container {
-  background-color: rgb(43, 118, 184) !important;
+  background-color: rgb(255, 255, 255) !important;
 }
 
 .container-fluid {
