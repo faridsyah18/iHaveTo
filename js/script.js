@@ -57,7 +57,7 @@ function addTask() {
     // Membuat elemen <ul> baru
     let ul = document.createElement("ul");
 
-    // Membuat elemen <div> dengan class "ClistContainer-name"
+    // Membuat elemen <div> dengan class "todo-name"
     let todoNameDiv = document.createElement("div");
     todoNameDiv.className = "todo-name";
 
