@@ -3,16 +3,18 @@ const listTodo = document.getElementsByClassName("list-todo");
 const listContainer = document.querySelectorAll(".list-container");
 const formTodo = document.querySelector(".container-form");
 
+// Membuat agar data terakhir disimpan di lokal
 function saveData() {
   localStorage.setItem("data", listTodo[0].innerHTML);
 
   loadData();
 }
 
+// Mengambil data terakhir yang disimpan di lokal
 function loadData() {
   listTodo[0].innerHTML = localStorage.getItem("data");
 
-  // Mengambil semua elemet todo
+  // Mengambil semua elemen todo
   let todoNames = listTodo[0].querySelectorAll(".todo-name");
 
   // Mengambil semua elemen X
@@ -50,7 +52,9 @@ function loadData() {
 
 loadData();
 
+// Function untuk tombol add
 function addTask() {
+  // Beri alert jika input kosong
   if (inputBox.value === "") {
     let alertText = document.querySelector(".container-form form p");
     if (!alertText) {
@@ -61,9 +65,9 @@ function addTask() {
       };
       alertCont();
     }
+    // Hapus alert jika input tidak kosong
   } else {
     let alertText = document.querySelector(".container-form form p");
-
     if (alertText) {
       alertText.remove();
     }
