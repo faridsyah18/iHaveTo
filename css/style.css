@@ -63,10 +63,6 @@ body {
   font-size: 16px;
 }
 
-.container-form form p.not-active {
-  display: none;
-}
-
 .container-form form .input-todolist {
   margin-top: 0.5rem !important;
   /* background-color: #000; */
