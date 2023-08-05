@@ -12,7 +12,7 @@
     />
     <!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" /> -->
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
   </head>
   <body>
     <div class="container">
@@ -23,7 +23,12 @@
             <label for="label-form">What you have to do?</label>
             <div class="input-todolist">
               <input type="text" id="input" placeholder="Text here" />
-              <button onclick="addTask()" type="submit">Add</button>
+              <button
+                onclick="event.preventDefault(); addTask();"
+                type="submit"
+              >
+                Add
+              </button>
             </div>
           </form>
         </div>
