@@ -2,6 +2,7 @@ const inputBox = document.getElementById("input");
 const listTodo = document.getElementsByClassName("list-todo");
 const listContainer = document.querySelectorAll(".list-container");
 const formTodo = document.querySelector(".container-form");
+const buttonAdd = document.querySelector("button");
 
 // Membuat agar data terakhir disimpan di lokal
 function saveData() {
@@ -52,8 +53,9 @@ function loadData() {
 
 loadData();
 
-// Function untuk tombol add
-function addTask() {
+// Event Listener untuk tombol add
+buttonAdd.addEventListener("click", function () {
+  preventDefault();
   // Beri alert jika input kosong
   if (inputBox.value === "") {
     let alertText = document.querySelector(".container-form form p");
@@ -122,7 +124,7 @@ function addTask() {
     // Menambahkan class "non-active" ke class list-container
     listContainer[0].classList.add("non-active");
   }
-}
+});
 
 function checkListTodoKosong() {
   // Cek jika tidak ada elemen di dalam list-todo
