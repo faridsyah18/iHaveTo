@@ -54,8 +54,8 @@ function loadData() {
 loadData();
 
 // Event Listener untuk tombol add
-buttonAdd.addEventListener("click", function () {
-  preventDefault();
+buttonAdd.addEventListener("click", function (e) {
+  e.preventDefault();
   // Beri alert jika input kosong
   if (inputBox.value === "") {
     let alertText = document.querySelector(".container-form form p");
